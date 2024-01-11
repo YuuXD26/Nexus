@@ -1,17 +1,6 @@
 const { spawn } = require("child_process");
 const path = require("path");
-const express = require("express");
-const axios = require("axios");
-
-const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Nexus Bot Ready to Listening🚀");
-});
-
-app.listen(3000, () => {
-  console.log("Nexus Bot Ready t Listening🚀");
-});
+const keep_alive = require('./lib/keep_alive.js');
 
 function start() {
   let args = [path.join(__dirname, "itsbayy.js"), ...process.argv.slice(2)];
